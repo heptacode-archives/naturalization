@@ -1,7 +1,6 @@
 #pragma once
 #include "Math.h"
-class InputManager
-{
+class InputManager {
 private:
 	static POINT mousePosition;
 
@@ -19,4 +18,3 @@ public:
 	static bool GetKeyPressed(int vk);
 	static bool GetKeyUp(int vk);
 };
-

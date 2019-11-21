@@ -2,9 +2,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "EnemyManager.h"
-class PhysicsManager :
-	public GameObject
-{
+class PhysicsManager : public GameObject {
 public:
 	PhysicsManager(Player* p, EnemyManager* em, BulletManager* bm);
 	~PhysicsManager();

@@ -2,62 +2,42 @@
 #include "CircleCollider.h"
 #include "Collision.h"
 
-CircleCollider::CircleCollider(Transform& transform, float radius)
-	: Collider(transform), boundingCircle(Vector2(), radius)
-{
+CircleCollider::CircleCollider(Transform& transform, float radius) : Collider(transform), boundingCircle(Vector2(), radius) {}
+
+CircleCollider::CircleCollider(Transform& transform, const Circle& circle) : Collider(transform), boundingCircle(circle) {}
+
+CircleCollider::CircleCollider(Transform& transform, const Vector2& center, float radius) : Collider(transform), boundingCircle(center, radius) {}
+
+CircleCollider::CircleCollider(Transform& transform, float x, float y, float radius) : Collider(transform), boundingCircle(x, y, radius) {}
+
+Collider::Circle CircleCollider::GetTransformedCircle() {
+	return Circle(boundingCircle.center + transform.position, boundingCircle.radius);
 }
 
-CircleCollider::CircleCollider(Transform& transform, const Circle& circle)
-	:Collider(transform),boundingCircle(circle)
-{
+Vector2 CircleCollider::GetCenterOnScreen() {
+	return transform.position + boundingCircle.center;
 }
 
-CircleCollider::CircleCollider(Transform& transform, const Vector2& center, float radius)
-	: Collider(transform), boundingCircle(center, radius)
-{
+float CircleCollider::GetXOnScreen() {
+	return transform.position.x + boundingCircle.center.x;
 }
 
-CircleCollider::CircleCollider(Transform& transform, float x, float y, float radius)
-	:Collider(transform), boundingCircle(x,y,radius)
-{
+float CircleCollider::GetYOnScreen() {
+	return transform.position.y + boundingCircle.center.y;
 }
 
-Collider::Circle CircleCollider::GetTransformedCircle()
-{
-	return Circle(boundingCircle.center+transform.position,boundingCircle.radius);
-}
-
-Vector2 CircleCollider::GetCenterOnScreen()
-{
-	return transform.position+ boundingCircle.center;
-}
-
-float CircleCollider::GetXOnScreen()
-{
-	return transform.position.x+boundingCircle.center.x;
-}
-
-float CircleCollider::GetYOnScreen()
-{
-	return transform.position.y+boundingCircle.center.y;
-}
-
-bool CircleCollider::Intersected(Collider& col)
-{
+bool CircleCollider::Intersected(Collider& col) {
 	return col.Intersected(GetTransformedCircle());
 }
 
-bool CircleCollider::Intersected(const AABBBox& box)
-{
-	return Collision::Intersected(box,GetTransformedCircle());
+bool CircleCollider::Intersected(const AABBBox& box) {
+	return Collision::Intersected(box, GetTransformedCircle());
 }
 
-bool CircleCollider::Intersected(const Circle& circle)
-{
-	return Collision::Intersected(GetTransformedCircle(),circle);
+bool CircleCollider::Intersected(const Circle& circle) {
+	return Collision::Intersected(GetTransformedCircle(), circle);
 }
 
-bool CircleCollider::Intersected(const Vector2& vector)
-{
-	return Collision::Intersected(GetTransformedCircle(),vector);
+bool CircleCollider::Intersected(const Vector2& vector) {
+	return Collision::Intersected(GetTransformedCircle(), vector);
 }

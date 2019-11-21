@@ -1,9 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Enemy.h"
-class EnemyManager :
-	public GameObject
-{
+class EnemyManager : public GameObject {
 public:
 	std::list<Enemy*> enemyList;
 
@@ -17,4 +15,3 @@ private:
 	std::list<Enemy*> destroyed;
 	void RemoveDestroyed();
 };
-

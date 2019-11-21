@@ -4,9 +4,7 @@
 #include "Transform.h"
 
 //렌더링과 관련된 일을 할 객체
-class Renderer :
-	public Component
-{
+class Renderer : public Component {
 public:
 	Renderer();
 	Renderer(Sprite* startSprite, float alpha = 1.0f);
@@ -23,4 +21,3 @@ public:
 	virtual void Update() {}
 	void Render(ID2D1HwndRenderTarget& renderTarget, Transform& transform);
 };
-

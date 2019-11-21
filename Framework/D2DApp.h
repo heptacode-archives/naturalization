@@ -1,7 +1,6 @@
 #pragma once
 #include "stdafx.h"
-class D2DApp
-{
+class D2DApp {
 public:
 	D2DApp();
 
@@ -26,10 +25,9 @@ private:
 	ID2D1Factory* factory;
 	IWICImagingFactory* wicFactory;
 	ID2D1HwndRenderTarget* renderTarget;
-	
+
 public:
 	ID2D1HwndRenderTarget& GetRenderTarget();
 	IWICImagingFactory& GetImagingFactory();
 	ID2D1Factory& GetFactory();
 };
-

@@ -2,11 +2,10 @@
 #include "stdafx.h"
 #include "Renderer.h"
 
-class GameObject
-{
+class GameObject {
 public:
 	GameObject(Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2());
-	GameObject(const wchar_t* imagePath, Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2(1.0f,1.0f));
+	GameObject(const wchar_t* imagePath, Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2(1.0f, 1.0f));
 	GameObject(Renderer* renderer, Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2(1.0f, 1.0f));
 	virtual ~GameObject();
 private:
@@ -25,4 +24,3 @@ public:
 public:
 	bool GetActive();
 };
-

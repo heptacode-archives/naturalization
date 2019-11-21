@@ -1,9 +1,7 @@
 #pragma once
 #include "Collider.h"
 
-class AABBCollider :
-	public Collider
-{
+class AABBCollider : public Collider {
 public:
 	AABBCollider(Transform& transform, const Vector2& size);
 	AABBCollider(Transform& transform, const Vector2& leftTop, const Vector2& rightBottom);
@@ -35,4 +33,3 @@ public:
 
 	virtual void Update() {}
 };
-

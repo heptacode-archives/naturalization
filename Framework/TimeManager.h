@@ -1,6 +1,5 @@
 #pragma once
-class TimeManager
-{
+class TimeManager {
 	friend class Framework;
 private:
 	static float deltaTime;
@@ -8,4 +7,3 @@ private:
 public:
 	static float GetDeltaTime();
 };
-

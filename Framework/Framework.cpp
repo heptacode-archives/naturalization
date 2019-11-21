@@ -3,18 +3,12 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 
-Framework::Framework()
-{
-}
+Framework::Framework() {}
 
-void Framework::Run(Scene* startScene, const wchar_t* title, int width, int height, bool isFullScreen)
-{
-	if (SUCCEEDED(CoInitialize(NULL)))
-	{
-		if (winApp.Initialize(title, width, height, isFullScreen))
-		{
-			if (d2dApp.Initialize())
-			{
+void Framework::Run(Scene* startScene, const wchar_t* title, int width, int height, bool isFullScreen) {
+	if (SUCCEEDED(CoInitialize(NULL))) {
+		if (winApp.Initialize(title, width, height, isFullScreen)) {
+			if (d2dApp.Initialize()) {
 				Scene::currentScene = startScene;
 				Scene::currentScene->Initialize();
 				StartGameLoop();
@@ -27,16 +21,14 @@ void Framework::Run(Scene* startScene, const wchar_t* title, int width, int heig
 	}
 }
 
-void Framework::StartGameLoop()
-{
+void Framework::StartGameLoop() {
 	MSG msg;
 	ZeroMemory(&msg, sizeof(MSG));
 
 	d2dApp.LoadBitmapFromFile(L"a.png", 400, 0, &d2dApp.example);
 
 	while (msg.message != WM_QUIT) {
-		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
-		{
+		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
@@ -52,18 +44,15 @@ void Framework::StartGameLoop()
 	}
 }
 
-Framework& Framework::GetInstance()
-{
+Framework& Framework::GetInstance() {
 	static Framework f;
 	return f;
 }
 
-WinApp& Framework::GetWinApp()
-{
+WinApp& Framework::GetWinApp() {
 	return winApp;
 }
 
-D2DApp& Framework::GetD2DApp()
-{
+D2DApp& Framework::GetD2DApp() {
 	return d2dApp;
 }

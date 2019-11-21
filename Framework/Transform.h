@@ -3,11 +3,9 @@
 #include "Math.h"
 
 //위치정보, 회전정보, 크기 정보를 저장
-class Transform :
-	public Component
-{
+class Transform : public Component {
 public:
-	Transform(Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2(1.0f,1.0f));
+	Transform(Vector2 position = Vector2(), float angle = 0.0f, Vector2 scale = Vector2(1.0f, 1.0f));
 	virtual ~Transform();
 
 public:
@@ -28,4 +26,3 @@ public:
 	void SetScale(float x, float y);
 	void SetScale(Vector2& v);
 };
-

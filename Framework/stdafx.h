@@ -1,4 +1,3 @@
-
 #include <Windows.h>
 #include <iostream>
 #include <string>
@@ -14,7 +13,6 @@
 #pragma comment(lib, "d2d1.lib")
 #pragma comment(lib, "WindowsCodecs.lib")
 #pragma comment(lib, "Winmm.lib")
-
 
 #define SAFE_RELEASE(p) { if(p){p->Release();} p=NULL; }
 #define SAFE_DELETE(p) {if(p!=nullptr){delete(p);} p=nullptr; }

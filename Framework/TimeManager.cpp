@@ -3,8 +3,7 @@
 
 float TimeManager::deltaTime;
 
-void TimeManager::UpdateTime()
-{
+void TimeManager::UpdateTime() {
 	static DWORD oldTime = timeGetTime();		//static 변수 초기화는 1회만 실행됨
 
 	DWORD curTime = timeGetTime();				//현재 시간 받아옴
@@ -12,7 +11,6 @@ void TimeManager::UpdateTime()
 	oldTime = curTime;							//이전 시간에 현재 시간 대입
 }
 
-float TimeManager::GetDeltaTime()
-{
+float TimeManager::GetDeltaTime() {
 	return deltaTime;
 }

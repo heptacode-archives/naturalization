@@ -1,9 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "Player.h"
-class GameScene :
-	public Scene
-{
+class GameScene : public Scene {
 public:
 	GameScene();
 	~GameScene();
@@ -12,4 +10,3 @@ public:
 	Player* player;
 	GameObject* background;
 };
-

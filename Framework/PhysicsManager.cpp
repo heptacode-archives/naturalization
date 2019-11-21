@@ -1,12 +1,9 @@
 #include "stdafx.h"
 #include "PhysicsManager.h"
 
-PhysicsManager::PhysicsManager(Player * p, EnemyManager * em, BulletManager * bm) : p(p), em(em), bm(bm)
-{
-}
+PhysicsManager::PhysicsManager(Player* p, EnemyManager* em, BulletManager* bm) : p(p), em(em), bm(bm) {}
 
-void PhysicsManager::LateUpdate()
-{
+void PhysicsManager::LateUpdate() {
 	if (!bm || !em || !p)
 		return;
 	for (auto& i : bm->playerBullets) {
@@ -19,6 +16,4 @@ void PhysicsManager::LateUpdate()
 	}
 }
 
-PhysicsManager::~PhysicsManager()
-{
-}
+PhysicsManager::~PhysicsManager() {}

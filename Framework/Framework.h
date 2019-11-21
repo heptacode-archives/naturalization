@@ -3,8 +3,7 @@
 #include "D2DApp.h"
 #include "Scene.h"
 
-class Framework
-{
+class Framework {
 public:
 	Framework();
 private:
@@ -12,7 +11,7 @@ private:
 	D2DApp d2dApp;
 
 public:
-	void Run(Scene* startScene,const wchar_t* title, int width, int height, bool isFullScreen);
+	void Run(Scene* startScene, const wchar_t* title, int width, int height, bool isFullScreen);
 
 private:
 	void StartGameLoop();

@@ -1,13 +1,9 @@
 #pragma once
 #include "Transform.h"
 
-
-class Collider :
-	public Component
-{
+class Collider : public Component {
 public:
-	struct AABBBox //center값은 transform.position을 원점으로한 거리입니다.
-	{
+	struct AABBBox { //center값은 transform.position을 원점으로한 거리입니다.
 		Vector2 leftTop;
 		Vector2 rightBottom;
 
@@ -18,8 +14,7 @@ public:
 		AABBBox(const Vector2& leftTop, const Vector2& rightBottom);
 		AABBBox(float left, float top, float right, float bottom);
 	};
-	struct Circle //center값은 transform.position을 원점으로한 거리입니다.
-	{
+	struct Circle { //center값은 transform.position을 원점으로한 거리입니다.
 		Vector2 center;
 		float radius;
 

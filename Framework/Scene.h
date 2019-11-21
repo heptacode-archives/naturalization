@@ -5,13 +5,12 @@
 #include "GameObject.h"
 #include "ResourceManager.h"
 
-class Scene
-{
+class Scene {
 	friend class Framework;
 public:
 	Scene();
 	virtual ~Scene();
-	
+
 private:
 	static Scene* currentScene;
 	static Scene* nextScene;
@@ -39,4 +38,3 @@ public:
 public:
 	ResourceManager& GetResourceManager();					//Getter
 };
-

@@ -1,9 +1,7 @@
 #pragma once
 #include "Collider.h"
 
-class CircleCollider :
-	public Collider
-{
+class CircleCollider : public Collider {
 public:
 	CircleCollider(Transform& transform, float radius);
 	CircleCollider(Transform& transform, const Circle& circle);
@@ -18,12 +16,10 @@ public:
 	Vector2 GetCenterOnScreen();
 	float GetXOnScreen();
 	float GetYOnScreen();
-	
 
 	virtual void Update() {}
 	virtual bool Intersected(Collider& col);
 	virtual bool Intersected(const AABBBox& box);
-	virtual bool Intersected(const Circle& circle); 
+	virtual bool Intersected(const Circle& circle);
 	virtual bool Intersected(const Vector2& vector);
 };
-

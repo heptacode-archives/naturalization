@@ -1,9 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Bullet.h"
-class BulletManager :
-	public GameObject
-{
+class BulletManager : public GameObject {
 public:
 	BulletManager();
 	~BulletManager();
@@ -17,4 +15,3 @@ private:
 	std::list<Bullet*> destroyed;
 	void Remove();
 };
-
