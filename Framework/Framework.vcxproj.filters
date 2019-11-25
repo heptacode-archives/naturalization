@@ -16,6 +16,12 @@
     <Filter Include="Framework\Presentation">
       <UniqueIdentifier>{1d99a645-263b-4b62-9117-70ebc7efb36f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Custom">
+      <UniqueIdentifier>{ddf321a7-0693-4d18-9822-e64cf8a84cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused">
+      <UniqueIdentifier>{52b60a8e-a7d4-44ef-8122-3bf7574b8130}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -50,9 +56,6 @@
       <Filter>Framework\Presentation</Filter>
     </ClCompile>
     <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="CircleCollider.cpp">
       <Filter>Framework\Components</Filter>
     </ClCompile>
@@ -68,11 +71,33 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Framework\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EnemyManager.cpp" />
-    <ClCompile Include="PhysicsManager.cpp" />
-    <ClCompile Include="Image.cpp" />
-    <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsManager.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -112,9 +137,6 @@
       <Filter>Framework\Presentation</Filter>
     </ClInclude>
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CircleCollider.h">
       <Filter>Framework\Components</Filter>
     </ClInclude>
@@ -130,11 +152,33 @@
     <ClInclude Include="InputManager.h">
       <Filter>Framework\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EnemyManager.h" />
-    <ClInclude Include="PhysicsManager.h" />
-    <ClInclude Include="Image.h" />
-    <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="ImageManager.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsManager.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Unused</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Math.inl">
