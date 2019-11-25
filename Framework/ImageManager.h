@@ -16,6 +16,8 @@ public:
 
 	Image* PushBackImage(Image* i);
 	void PrintImage();
+	void Timeout();
+	void GameOver();
 	void Destroy(Image* i);
 	virtual void Update();
 	virtual void LateUpdate();

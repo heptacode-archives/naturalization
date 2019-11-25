@@ -5,8 +5,8 @@
 #include "Timer.h"
 
 int stage = 0;
-int ImageManager::ans[11] = { 0, 8, 4, 2, 7, 1, 3, 4, 9, 7, 3 };
-int tile = 0;
+int ImageManager::ans[11] = { -1, 8, 4, 2, 7, 1, 3, 4, 9, 7, 3 };
+int tile = -1;
 
 ImageManager::ImageManager() {}
 
@@ -21,65 +21,86 @@ Image* ImageManager::PushBackImage(Image* e) {
 void ImageManager::PrintImage() {
 	Remove();
 	switch (stage) {
+	case -2:
+		PushBackImage(new Image(L"resources/GameOver.png", Vector2(360.0f, 360.0f)));
+		break;
+	case -1:
+		PushBackImage(new Image(L"resources/Timeout.png", Vector2(360.0f, 360.0f)));
+		break;
 	case 0:
 		PushBackImage(new Image(L"resources/background.jpg", Vector2(360.0f, 360.0f)));
+		break;
 	case 1:
-		PushBackImage(new Image(L"resources/img/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/img/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/img/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/img/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/img/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/img/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/img/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/img/discord.png", Vector2(360.0f, 600.0f)));	// 8 $
-		PushBackImage(new Image(L"resources/img/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
+		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
+		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8 $
+		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 2:
-		PushBackImage(new Image(L"resources/img/candle.jpg", Vector2(120.0f, 120.0f)));		// 1
-		PushBackImage(new Image(L"resources/img/chandelier.jpg", Vector2(360.0f, 120.0f)));	// 2
-		PushBackImage(new Image(L"resources/img/lightapp.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/img/discord.png", Vector2(120.0f, 360.0f)));	// 4 $
-		PushBackImage(new Image(L"resources/img/led.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/img/feather.png", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/img/lamp.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/img/lightbulb.jpg", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/img/halogen.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(120.0f, 120.0f)));		// 1
+		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(360.0f, 120.0f)));	// 2
+		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(120.0f, 360.0f)));	// 4 $
+		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(120.0f, 600.0f)));		// 7
+		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 3:
-		PushBackImage(new Image(L"resources/img/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/img/candle.jpg", Vector2(360.0f, 120.0f)));		// 2 $
-		PushBackImage(new Image(L"resources/img/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/img/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/img/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/img/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/img/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/img/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/img/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2 $
+		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
+		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 4:
-		PushBackImage(new Image(L"resources/img/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/img/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/img/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/img/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/img/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/img/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/img/led.jpg", Vector2(120.0f, 600.0f)));		// 7 $
-		PushBackImage(new Image(L"resources/img/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/img/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
+		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7 $
+		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 5:
-		PushBackImage(new Image(L"resources/img/feather.png", Vector2(120.0f, 120.0f)));	// 1 $
-		PushBackImage(new Image(L"resources/img/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/img/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/img/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/img/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/img/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/img/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/img/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/img/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1 $
+		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
+		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
+		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	}
 }
+
+
+void ImageManager::Timeout() {
+	std::cout << "시간 초과\n\n";
+	stage = -1;
+	PrintImage();
+}
+
+void ImageManager::GameOver() {
+	std::cout << "GAME OVER\n\n";
+	stage = -2;
+	PrintImage();
+}
+
 
 void ImageManager::Destroy(Image* e) {
 	destroyed.push_back(e);
@@ -87,10 +108,6 @@ void ImageManager::Destroy(Image* e) {
 
 void ImageManager::Update() {
 	if (InputManager::GetKeyDown(VK_LBUTTON)) {
-		if (stage == 0) {
-			stage++;
-			std::cout << "Stage " << stage << std::endl;
-		}
 		int mX = InputManager::GetMouseX();
 		int mY = InputManager::GetMouseY();
 		if (mX >= 20 && mY >= 20 && mX <= 220 && mY <= 220) // (20, 20) ~ (220, 220)
@@ -118,9 +135,21 @@ void ImageManager::Update() {
 			stage++;
 			PrintImage();
 			std::cout << "stage : " << stage << " tile:" << tile << " ans\n";
+			Timer::Timer(1);
+			//timer->reset();
+			// 타이머 리셋되어야 함
 		}
-		else {
+		else if(tile != ans[stage] && stage >= 1) {
 			std::cout << "stage : " << stage << " tile:" << tile << " wrong\n" << "right ans : " << ans[stage] << "\n\n";
+			GameOver();
+		}
+		else if (stage == 0) {
+			stage++;
+			std::cout << "Now Stage " << stage << std::endl;
+			PrintImage();
+			Timer::Timer(1);
+			//timer->reset();
+			// 타이머 리셋되어야 함
 		}
 	}
 }
