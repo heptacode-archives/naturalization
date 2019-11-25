@@ -5,7 +5,7 @@
 
 int main() {
 	Framework& f = Framework::GetInstance();
-	f.Run(new GameScene(), L"≈∏¿Ã∆≤", 640, 415, false);
+	f.Run(new GameScene(), L"Game", 720, 720, false);
 
 	return 0;
 }

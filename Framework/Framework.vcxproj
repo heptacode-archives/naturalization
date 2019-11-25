@@ -138,10 +138,14 @@
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -163,10 +167,14 @@
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="PhysicsManager.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Scene.h" />
