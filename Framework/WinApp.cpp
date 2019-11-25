@@ -67,7 +67,7 @@ bool WinApp::Initialize(const wchar_t* title, int width, int height, bool isFull
 	AdjustWindowRectEx(&windowRect, style, FALSE, exstyle);
 
 	//윈도우 생성
-	hWnd = CreateWindowEx(exstyle, title, title, style, 
+	hWnd = CreateWindowEx(exstyle, title, title, style,
 		wx, wy, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top,
 		NULL, NULL, wc.hInstance, NULL);
 
@@ -87,13 +87,13 @@ LRESULT WinApp::WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam) 
 	//메시지 루프 도중 메시지가 왔을 경우 실행됨
 	static int x, y;
 	switch (iMessage) {
-		case WM_MOUSEMOVE:
-			x = LOWORD(lParam);
-			y = HIWORD(lParam);
-			//printf("%d, %d\n", x, y);
-			break;
-		case WM_DESTROY:
-			PostQuitMessage(0); return 0;
+	case WM_MOUSEMOVE:
+		x = LOWORD(lParam);
+		y = HIWORD(lParam);
+		//printf("%d, %d\n", x, y);
+		break;
+	case WM_DESTROY:
+		PostQuitMessage(0); return 0;
 	}
 	return DefWindowProc(hWnd, iMessage, wParam, lParam);
 }

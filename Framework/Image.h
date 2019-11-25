@@ -6,10 +6,8 @@ class Image :
 {
 public:
 	Image(const wchar_t* path, Vector2 pos);
-	//void ReplaceImage(int p);
 	~Image();
 	AABBCollider* col;
 
 	virtual void Update();
 };
-

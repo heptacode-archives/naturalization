@@ -21,4 +21,3 @@ private:
 	std::list<Image*> destroyed;
 	void Remove();
 };
-

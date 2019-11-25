@@ -3,7 +3,7 @@
 #include "BulletManager.h"			//여기
 class Player : public GameObject {
 public:
-	Player(const wchar_t* path,	BulletManager* bm);			//여기
+	Player(const wchar_t* path, BulletManager* bm);			//여기
 	~Player();
 
 	float moveSpeed;	//이동 속도
