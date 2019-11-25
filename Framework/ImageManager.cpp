@@ -31,59 +31,59 @@ void ImageManager::PrintImage() {
 		PushBackImage(new Image(L"resources/background.jpg", Vector2(360.0f, 360.0f)));
 		break;
 	case 1:
-		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8 $
-		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage01/light01.jpg", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage01/light02.jpg", Vector2(360.0f, 120.0f)));	// 2
+		PushBackImage(new Image(L"resources/stage01/light03.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage01/light04.png", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage01/light05.jpg", Vector2(360.0f, 360.0f)));	// 5
+		PushBackImage(new Image(L"resources/stage01/light06.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage01/light07.jpg", Vector2(120.0f, 600.0f)));	// 7
+		PushBackImage(new Image(L"resources/stage01/light_ans.jpg", Vector2(360.0f, 600.0f)));	// 8 $
+		PushBackImage(new Image(L"resources/stage01/light08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 2:
-		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(120.0f, 120.0f)));		// 1
-		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(360.0f, 120.0f)));	// 2
-		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(120.0f, 360.0f)));	// 4 $
-		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage02/glasses01.jpg", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage02/glasses02.jpg", Vector2(360.0f, 120.0f)));	// 2
+		PushBackImage(new Image(L"resources/stage02/glasses03.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage02/glasses_ans.jpg", Vector2(120.0f, 360.0f)));// 4 $
+		PushBackImage(new Image(L"resources/stage02/glasses04.jpg", Vector2(360.0f, 360.0f)));	// 5
+		PushBackImage(new Image(L"resources/stage02/glasses05.png", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage02/glasses06.png", Vector2(120.0f, 600.0f)));	// 7
+		PushBackImage(new Image(L"resources/stage02/glasses07.png", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage02/glasses08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 3:
-		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2 $
-		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage03/circle01.jpg", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage03/circle_ans.jpg", Vector2(360.0f, 120.0f)));	// 2 $
+		PushBackImage(new Image(L"resources/stage03/circle02.png", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage03/circle03.png", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage03/circle04.jpg", Vector2(360.0f, 360.0f)));	// 5
+		PushBackImage(new Image(L"resources/stage03/circle05.png", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage03/circle06.png", Vector2(120.0f, 600.0f)));	// 7
+		PushBackImage(new Image(L"resources/stage03/circle07.jpg", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage03/circle08.png", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 4:
-		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1
-		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7 $
-		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage04/check01.JPG", Vector2(120.0f, 120.0f)));	// 1
+		PushBackImage(new Image(L"resources/stage04/check02.png", Vector2(360.0f, 120.0f)));	// 2
+		PushBackImage(new Image(L"resources/stage04/check03.jpg", Vector2(600.0f, 120.0f)));	// 3
+		PushBackImage(new Image(L"resources/stage04/check04.jpg", Vector2(120.0f, 360.0f)));	// 4
+		PushBackImage(new Image(L"resources/stage04/check05.jpg", Vector2(360.0f, 360.0f)));	// 5
+		PushBackImage(new Image(L"resources/stage04/check06.jpg", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage04/check_ans.jpg", Vector2(120.0f, 600.0f)));	// 7 $
+		PushBackImage(new Image(L"resources/stage04/check07.jpg", Vector2(360.0f, 600.0f)));	// 8
+		PushBackImage(new Image(L"resources/stage04/check08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 5:
-		PushBackImage(new Image(L"resources/stage01/feather.png", Vector2(120.0f, 120.0f)));	// 1 $
-		PushBackImage(new Image(L"resources/stage01/candle.jpg", Vector2(360.0f, 120.0f)));		// 2
-		PushBackImage(new Image(L"resources/stage01/chandelier.jpg", Vector2(600.0f, 120.0f)));	// 3
-		PushBackImage(new Image(L"resources/stage01/halogen.jpg", Vector2(120.0f, 360.0f)));	// 4
-		PushBackImage(new Image(L"resources/stage01/lamp.jpg", Vector2(360.0f, 360.0f)));		// 5
-		PushBackImage(new Image(L"resources/stage01/lightapp.jpg", Vector2(600.0f, 360.0f)));	// 6
-		PushBackImage(new Image(L"resources/stage01/led.jpg", Vector2(120.0f, 600.0f)));		// 7
-		PushBackImage(new Image(L"resources/stage01/discord.png", Vector2(360.0f, 600.0f)));	// 8
-		PushBackImage(new Image(L"resources/stage01/lightbulb.jpg", Vector2(600.0f, 600.0f)));	// 9
+		PushBackImage(new Image(L"resources/stage05/bow_ans.jpg", Vector2(120.0f, 120.0f)));	// 1 $
+		PushBackImage(new Image(L"resources/stage05/bow01.jpg", Vector2(360.0f, 120.0f)));		// 2
+		PushBackImage(new Image(L"resources/stage05/bow02.jpg", Vector2(600.0f, 120.0f)));		// 3
+		PushBackImage(new Image(L"resources/stage05/bow03.jpg", Vector2(120.0f, 360.0f)));		// 4
+		PushBackImage(new Image(L"resources/stage05/bow04.png", Vector2(360.0f, 360.0f)));		// 5
+		PushBackImage(new Image(L"resources/stage05/bow05.jpg", Vector2(600.0f, 360.0f)));		// 6
+		PushBackImage(new Image(L"resources/stage05/bow06.png", Vector2(120.0f, 600.0f)));		// 7
+		PushBackImage(new Image(L"resources/stage05/bow07.jpg", Vector2(360.0f, 600.0f)));		// 8
+		PushBackImage(new Image(L"resources/stage05/bow08.jpg", Vector2(600.0f, 600.0f)));		// 9
 		break;
 	}
 }
