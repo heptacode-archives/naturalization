@@ -14,7 +14,6 @@ public:
 	int GetScreenWidth();
 	int GetScreenHeight();
 	bool GetFullScreened();
-	void ChangeTitle(const wchar_t* title);
 public:
 	bool Initialize(const wchar_t* title, int width, int height, bool isFullScreen);
 

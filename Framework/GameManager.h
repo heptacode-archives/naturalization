@@ -2,9 +2,7 @@
 #include "GameObject.h"
 #include "Image.h"
 #include "TimeManager.h"
-class GameManager :
-	public GameObject
-{
+class GameManager : public GameObject {
 public:
 	GameManager();
 	~GameManager();
