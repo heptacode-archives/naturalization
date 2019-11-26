@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "GameScene.h"
-#include "PhysicsManager.h"
 #include "Image.h"
 
 GameScene::GameScene() {}

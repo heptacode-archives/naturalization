@@ -4,9 +4,6 @@
     <Filter Include="Custom">
       <UniqueIdentifier>{ddf321a7-0693-4d18-9822-e64cf8a84cfd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Unused">
-      <UniqueIdentifier>{52b60a8e-a7d4-44ef-8122-3bf7574b8130}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Framework">
       <UniqueIdentifier>{d24f3e45-29b4-413e-8aeb-7a8b7de39dbb}</UniqueIdentifier>
     </Filter>
@@ -74,24 +71,6 @@
     <ClCompile Include="Image.cpp">
       <Filter>Custom</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
-    <ClCompile Include="BulletManager.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyManager.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsManager.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Unused</Filter>
-    </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>Custom</Filter>
     </ClCompile>
@@ -151,24 +130,6 @@
     </ClInclude>
     <ClInclude Include="Image.h">
       <Filter>Custom</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Unused</Filter>
-    </ClInclude>
-    <ClInclude Include="BulletManager.h">
-      <Filter>Unused</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Unused</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyManager.h">
-      <Filter>Unused</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsManager.h">
-      <Filter>Unused</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Unused</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>Custom</Filter>
