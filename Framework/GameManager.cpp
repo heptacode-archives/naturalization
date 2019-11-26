@@ -3,7 +3,7 @@
 #include "Scene.h"
 #include "InputManager.h"
 
-int GameManager::ans[11] = { -1, 8, 4, 2, 7, 1, 3, 4, 9, 7, 3 };
+int GameManager::ans[10000] = { -1, 8, 4, 2, 7, 1 };
 
 GameManager::GameManager() {
 	stage = 0;
@@ -29,9 +29,10 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/Timeout.png", Vector2(360.0f, 360.0f)));
 		break;
 	case 0:
-		PushBackImage(new Image(L"resources/background.jpg", Vector2(360.0f, 360.0f)));
+		PushBackImage(new Image(L"resources/background.png", Vector2(360.0f, 360.0f)));
 		break;
 	case 1:
+		PushBackImage(new Image(L"resources/stage01/background.png", Vector2(360.0f, 360.0f)));
 		PushBackImage(new Image(L"resources/stage01/light01.jpg", Vector2(120.0f, 120.0f)));	// 1
 		PushBackImage(new Image(L"resources/stage01/light02.jpg", Vector2(360.0f, 120.0f)));	// 2
 		PushBackImage(new Image(L"resources/stage01/light03.jpg", Vector2(600.0f, 120.0f)));	// 3
@@ -43,6 +44,7 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage01/light08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 2:
+		PushBackImage(new Image(L"resources/stage02/background.png", Vector2(360.0f, 360.0f)));
 		PushBackImage(new Image(L"resources/stage02/glasses01.jpg", Vector2(120.0f, 120.0f)));	// 1
 		PushBackImage(new Image(L"resources/stage02/glasses02.jpg", Vector2(360.0f, 120.0f)));	// 2
 		PushBackImage(new Image(L"resources/stage02/glasses03.jpg", Vector2(600.0f, 120.0f)));	// 3
@@ -54,6 +56,7 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage02/glasses08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 3:
+		PushBackImage(new Image(L"resources/stage03/background.png", Vector2(360.0f, 360.0f)));
 		PushBackImage(new Image(L"resources/stage03/circle01.jpg", Vector2(120.0f, 120.0f)));	// 1
 		PushBackImage(new Image(L"resources/stage03/circle_ans.jpg", Vector2(360.0f, 120.0f)));	// 2 $
 		PushBackImage(new Image(L"resources/stage03/circle02.png", Vector2(600.0f, 120.0f)));	// 3
@@ -65,6 +68,7 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage03/circle08.png", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 4:
+		PushBackImage(new Image(L"resources/stage04/background.png", Vector2(360.0f, 360.0f)));
 		PushBackImage(new Image(L"resources/stage04/check01.JPG", Vector2(120.0f, 120.0f)));	// 1
 		PushBackImage(new Image(L"resources/stage04/check02.png", Vector2(360.0f, 120.0f)));	// 2
 		PushBackImage(new Image(L"resources/stage04/check03.jpg", Vector2(600.0f, 120.0f)));	// 3
@@ -76,6 +80,7 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage04/check08.jpg", Vector2(600.0f, 600.0f)));	// 9
 		break;
 	case 5:
+		PushBackImage(new Image(L"resources/stage05/background.png", Vector2(360.0f, 360.0f)));
 		PushBackImage(new Image(L"resources/stage05/bow_ans.jpg", Vector2(120.0f, 120.0f)));	// 1 $
 		PushBackImage(new Image(L"resources/stage05/bow01.jpg", Vector2(360.0f, 120.0f)));		// 2
 		PushBackImage(new Image(L"resources/stage05/bow02.jpg", Vector2(600.0f, 120.0f)));		// 3
@@ -86,20 +91,21 @@ void GameManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage05/bow07.jpg", Vector2(360.0f, 600.0f)));		// 8
 		PushBackImage(new Image(L"resources/stage05/bow08.jpg", Vector2(600.0f, 600.0f)));		// 9
 		break;
+	default:
+		stopTimer();
+		PushBackImage(new Image(L"resources/GameClear.png", Vector2(360.0f, 360.0f)));
 	}
 }
 
 
 void GameManager::Timeout() {
 	stopTimer();
-	std::cout << "시간 초과\n\n";
 	stage = -1;
 	PrintImage();
 }
 
 void GameManager::GameOver() {
 	stopTimer();
-	std::cout << "GAME OVER\n\n";
 	stage = -2;
 	PrintImage();
 }
@@ -142,26 +148,22 @@ void GameManager::Update() {
 		else if (mX >= 500 && mY >= 500 && mX <= 700 && mY <= 700) // (500, 500) ~ (700, 700)
 			tile = 9;
 
-		if (tile == ans[stage]) {
+		if (tile == ans[stage]) { // 정답
 			stage++;
 			PrintImage();
-			std::cout << "stage : " << stage << " tile:" << tile << " ans\n";
 			initTimer();
 		}
-		else if(tile != ans[stage] && stage >= 1) {
-			std::cout << "stage : " << stage << " tile:" << tile << " wrong\n" << "right ans : " << ans[stage] << "\n\n";
+		else if(tile != ans[stage] && stage >= 1) { // 오답
 			GameOver();
 		}
-		else if (stage == 0) {
+		else if (stage == 0) { // 게임 시작
 			stage++;
-			std::cout << "Now Stage " << stage << std::endl;
 			PrintImage();
 			initTimer();
 		}
 	}
 
 	time -= TimeManager::GetDeltaTime();
-	std::cout << time << std::endl;
 
 	if (time <= 0) {
 		Timeout();

@@ -10,7 +10,7 @@ public:
 	~GameManager();
 
 	int stage;
-	static int ans[11];
+	static int ans[10000];
 	int tile;
 	float time;
 
