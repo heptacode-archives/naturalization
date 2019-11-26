@@ -166,7 +166,7 @@ void GameManager::Update() {
 
 	time -= TimeManager::GetDeltaTime();
 
-	if (time <= 0) {
+	if (time <= 0 && !isGameEnded) {
 		Timeout();
 	}
 
