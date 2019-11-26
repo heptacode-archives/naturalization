@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Custom">
+      <UniqueIdentifier>{ddf321a7-0693-4d18-9822-e64cf8a84cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused">
+      <UniqueIdentifier>{52b60a8e-a7d4-44ef-8122-3bf7574b8130}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Framework">
       <UniqueIdentifier>{d24f3e45-29b4-413e-8aeb-7a8b7de39dbb}</UniqueIdentifier>
     </Filter>
@@ -15,12 +21,6 @@
     </Filter>
     <Filter Include="Framework\Presentation">
       <UniqueIdentifier>{1d99a645-263b-4b62-9117-70ebc7efb36f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Custom">
-      <UniqueIdentifier>{ddf321a7-0693-4d18-9822-e64cf8a84cfd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Unused">
-      <UniqueIdentifier>{52b60a8e-a7d4-44ef-8122-3bf7574b8130}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +71,6 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Framework\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="ImageManager.cpp">
-      <Filter>Custom</Filter>
-    </ClCompile>
     <ClCompile Include="Image.cpp">
       <Filter>Custom</Filter>
     </ClCompile>
@@ -95,7 +92,7 @@
     <ClCompile Include="Player.cpp">
       <Filter>Unused</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
+    <ClCompile Include="GameManager.cpp">
       <Filter>Custom</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,9 +149,6 @@
     <ClInclude Include="InputManager.h">
       <Filter>Framework\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="ImageManager.h">
-      <Filter>Custom</Filter>
-    </ClInclude>
     <ClInclude Include="Image.h">
       <Filter>Custom</Filter>
     </ClInclude>
@@ -176,7 +170,7 @@
     <ClInclude Include="Player.h">
       <Filter>Unused</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
+    <ClInclude Include="GameManager.h">
       <Filter>Custom</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,16 +1,18 @@
 #pragma once
 #include "GameObject.h"
 #include "Image.h"
-class ImageManager :
+#include "TimeManager.h"
+class GameManager :
 	public GameObject
 {
 public:
-	ImageManager();
-	~ImageManager();
+	GameManager();
+	~GameManager();
 
 	int stage;
 	static int ans[11];
 	int tile;
+	float time;
 
 	std::list<Image*> imageList;
 
@@ -18,6 +20,8 @@ public:
 	void PrintImage();
 	void Timeout();
 	void GameOver();
+	void initTimer();
+	void stopTimer();
 	void Destroy(Image* i);
 	virtual void Update();
 	virtual void LateUpdate();

@@ -1,24 +1,25 @@
 #include "stdafx.h"
-#include "ImageManager.h"
+#include "GameManager.h"
 #include "Scene.h"
 #include "InputManager.h"
-#include "Timer.h"
 
-int stage = 0;
-int ImageManager::ans[11] = { -1, 8, 4, 2, 7, 1, 3, 4, 9, 7, 3 };
-int tile = -1;
+int GameManager::ans[11] = { -1, 8, 4, 2, 7, 1, 3, 4, 9, 7, 3 };
 
-ImageManager::ImageManager() {}
+GameManager::GameManager() {
+	stage = 0;
+	time = 3.402823466e+38F;
+	tile = -1;
+}
 
-ImageManager::~ImageManager() {}
+GameManager::~GameManager() {}
 
-Image* ImageManager::PushBackImage(Image* e) {
+Image* GameManager::PushBackImage(Image* e) {
 	Scene::GetCurrentScene().PushBackGameObject(e);
 	imageList.push_back(e);
 	return e;
 }
 
-void ImageManager::PrintImage() {
+void GameManager::PrintImage() {
 	Remove();
 	switch (stage) {
 	case -2:
@@ -47,7 +48,7 @@ void ImageManager::PrintImage() {
 		PushBackImage(new Image(L"resources/stage02/glasses03.jpg", Vector2(600.0f, 120.0f)));	// 3
 		PushBackImage(new Image(L"resources/stage02/glasses_ans.jpg", Vector2(120.0f, 360.0f)));// 4 $
 		PushBackImage(new Image(L"resources/stage02/glasses04.jpg", Vector2(360.0f, 360.0f)));	// 5
-		PushBackImage(new Image(L"resources/stage02/glasses05.png", Vector2(600.0f, 360.0f)));	// 6
+		PushBackImage(new Image(L"resources/stage02/glasses05.jpg", Vector2(600.0f, 360.0f)));	// 6
 		PushBackImage(new Image(L"resources/stage02/glasses06.png", Vector2(120.0f, 600.0f)));	// 7
 		PushBackImage(new Image(L"resources/stage02/glasses07.png", Vector2(360.0f, 600.0f)));	// 8
 		PushBackImage(new Image(L"resources/stage02/glasses08.jpg", Vector2(600.0f, 600.0f)));	// 9
@@ -89,24 +90,34 @@ void ImageManager::PrintImage() {
 }
 
 
-void ImageManager::Timeout() {
+void GameManager::Timeout() {
+	stopTimer();
 	std::cout << "시간 초과\n\n";
 	stage = -1;
 	PrintImage();
 }
 
-void ImageManager::GameOver() {
+void GameManager::GameOver() {
+	stopTimer();
 	std::cout << "GAME OVER\n\n";
 	stage = -2;
 	PrintImage();
 }
 
+void GameManager::initTimer() {
+	time = 5.0f;
+}
 
-void ImageManager::Destroy(Image* e) {
+void GameManager::stopTimer() {
+	time = 3.402823466e+38F;
+}
+
+
+void GameManager::Destroy(Image* e) {
 	destroyed.push_back(e);
 }
 
-void ImageManager::Update() {
+void GameManager::Update() {
 	if (InputManager::GetKeyDown(VK_LBUTTON)) {
 		int mX = InputManager::GetMouseX();
 		int mY = InputManager::GetMouseY();
@@ -135,9 +146,7 @@ void ImageManager::Update() {
 			stage++;
 			PrintImage();
 			std::cout << "stage : " << stage << " tile:" << tile << " ans\n";
-			Timer::Timer(1);
-			//timer->reset();
-			// 타이머 리셋되어야 함
+			initTimer();
 		}
 		else if(tile != ans[stage] && stage >= 1) {
 			std::cout << "stage : " << stage << " tile:" << tile << " wrong\n" << "right ans : " << ans[stage] << "\n\n";
@@ -147,18 +156,24 @@ void ImageManager::Update() {
 			stage++;
 			std::cout << "Now Stage " << stage << std::endl;
 			PrintImage();
-			Timer::Timer(1);
-			//timer->reset();
-			// 타이머 리셋되어야 함
+			initTimer();
 		}
 	}
+
+	time -= TimeManager::GetDeltaTime();
+	std::cout << time << std::endl;
+
+	if (time <= 0) {
+		Timeout();
+	}
+
 }
 
-void ImageManager::LateUpdate() {
+void GameManager::LateUpdate() {
 	Remove();
 }
 
-void ImageManager::Remove() {
+void GameManager::Remove() {
 	for (auto& i : destroyed) {
 		imageList.remove(i);
 		Scene::GetCurrentScene().Destroy(i);

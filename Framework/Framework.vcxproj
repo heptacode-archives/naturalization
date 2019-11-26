@@ -159,7 +159,7 @@
     </ClCompile>
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Image.cpp" />
-    <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PhysicsManager.cpp">
@@ -178,7 +178,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>
@@ -220,7 +219,7 @@
     </ClInclude>
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Image.h" />
-    <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="PhysicsManager.h">
@@ -240,7 +239,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>

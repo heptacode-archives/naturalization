@@ -8,9 +8,6 @@ GameScene::GameScene() {}
 GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
-	imageManager = (ImageManager*)PushBackGameObject(new ImageManager());
-	imageManager->PrintImage();
-
-	timer = new Timer;
-	PushBackGameObject(timer);
+	gameManager = (GameManager*)PushBackGameObject(new GameManager());
+	gameManager->PrintImage();
 }
