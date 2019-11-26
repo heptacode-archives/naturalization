@@ -13,6 +13,7 @@ public:
 	static int ans[10000];
 	int tile;
 	float time;
+	bool isGameEnded = false;
 
 	std::list<Image*> imageList;
 

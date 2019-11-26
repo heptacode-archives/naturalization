@@ -94,6 +94,7 @@ void GameManager::PrintImage() {
 	default:
 		stopTimer();
 		PushBackImage(new Image(L"resources/GameClear.png", Vector2(360.0f, 360.0f)));
+		isGameEnded = true;
 	}
 }
 
@@ -153,7 +154,7 @@ void GameManager::Update() {
 			PrintImage();
 			initTimer();
 		}
-		else if(tile != ans[stage] && stage >= 1) { // 오답
+		else if(tile != ans[stage] && stage >= 1 && !isGameEnded) { // 오답
 			GameOver();
 		}
 		else if (stage == 0) { // 게임 시작
